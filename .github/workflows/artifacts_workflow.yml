@@ -50,5 +50,6 @@ jobs: # Jobs defined in the workflow
       id: describe
       run: |
         output=$(aws cloudformation describe-stacks --stack-name uda-artifact)
-        website_url=$(echo $output | jq -r '.Stacks[0].Outputs[] | select(.OutputKey == "WebsiteURL").OutputValue')
-        echo "::set-output name=website_url::$website_url"
+        echo "Output: $output"
+        echo "$output" >> output.json
+
