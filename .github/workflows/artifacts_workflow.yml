@@ -53,3 +53,9 @@ jobs: # Jobs defined in the workflow
         echo "Output: $output"
         echo "$output" >> output.json
 
+
+    - name: Describe CloudFormation Stack with single output value 
+      id: describe
+      run: |
+        aws cloudformation describe-stacks --stack-name "${uda-artifact}" --query 'Stacks[0].Outputs[?OutputKey==`WebsiteURL`].OutputValue' --output text
+
