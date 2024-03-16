@@ -47,7 +47,7 @@ jobs: # Jobs defined in the workflow
         aws s3 cp error.html s3://${{env.BUCKET_NAME}}
 
     - name: Describe CloudFormation Stack
-      id: describe-stack
+      id: describe-stack-1
       run: |
         output=$(aws cloudformation describe-stacks --stack-name uda-artifact)
         echo "Output: $output"
@@ -55,7 +55,7 @@ jobs: # Jobs defined in the workflow
 
 
     - name: Describe CloudFormation Stack with single output value 
-      id: describe-stack with only website url
+      id: describe-stack-2
       run: |
         aws cloudformation describe-stacks --stack-name "${uda-artifact}" --query 'Stacks[0].Outputs[?OutputKey==`WebsiteURL`].OutputValue' --output text
 
