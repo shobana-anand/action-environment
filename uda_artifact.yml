@@ -4,7 +4,7 @@ Resources:
   UdacityBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: website-artifacts
+      BucketName: web-artifacts-1
       WebsiteConfiguration:
         IndexDocument: index.html
         ErrorDocument: error.html
