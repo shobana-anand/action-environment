@@ -50,5 +50,5 @@ jobs: # Jobs defined in the workflow
       run: |
         aws cloudformation describe-stacks \
           --stack-name uda-artifact \
-          --query 'Stacks[0].Outputs[?OutputKey=='ArtifactBucketWebsiteURL'].OutputValue' \
+          --query 'Stacks[0].Outputs[?OutputKey=='WebsiteURL'].OutputValue' \
           --output text
