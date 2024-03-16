@@ -15,7 +15,7 @@ on:
         required: true
         default: 'error.html'
 env:
-  BUCKET_NAME: website-artifacts
+  BUCKET_NAME: web-artifacts-1
 jobs: # Jobs defined in the workflow
   build:
     runs-on: ubuntu-latest
