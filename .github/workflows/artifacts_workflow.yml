@@ -47,7 +47,7 @@ jobs: # Jobs defined in the workflow
         aws s3 cp error.html s3://${{env.BUCKET_NAME}}
 
     - name: Show S3 Bucket website URL
-      run: 
+      run: |
         aws cloudformation describe-stacks \
           --stack-name uda-artifact \
           --query 'Stacks[0].Outputs[?OutputKey=='ArtifactBucketWebsiteURL'].OutputValue' \
