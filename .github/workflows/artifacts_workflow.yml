@@ -40,11 +40,11 @@ jobs: # Jobs defined in the workflow
 
     - name: Upload index.html to S3 Bucket
       run: |
-        aws s3 cp ./website/${{github.event.inputs.index_document}} s3://${{env.BUCKET_NAME}}
+        aws s3 cp ./action_environments/${{github.event.inputs.index_document}} s3://${{env.BUCKET_NAME}}
 
-    - name: Upload index.html to S3 Bucket
+    - name: Upload error.html to S3 Bucket
       run: |
-        aws s3 cp ./website/${{github.event.inputs.error_document}} s3://${{env.BUCKET_NAME}}
+        aws s3 cp ./action_environments/${{github.event.inputs.error_document}} s3://${{env.BUCKET_NAME}}
 
     - name: Show S3 Bucket website URL
       run: 
